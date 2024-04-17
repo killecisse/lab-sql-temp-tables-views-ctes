@@ -5,7 +5,7 @@ select c.customer_id, concat(c.first_name, ' ', c.last_name) as full_name, c.ema
 from customer c
 join rental r
 	on c.customer_id = r.customer_id
-group by 1, 2, 3
+group by 1, 2, 3;
 -- Step 2: Create a Temporary Table
 create temporary table total_paid_per_customer as (
 select customer_id, sum(amount) as total_paid
